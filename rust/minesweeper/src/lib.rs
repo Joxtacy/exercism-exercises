@@ -60,10 +60,11 @@ fn count_adjacent_mines(board: &[&str], y: usize, x: usize, height: usize, width
             }
             let ny = y as isize + dy;
             let nx = x as isize + dx;
-            if (0..height as isize).contains(&ny) && (0..width as isize).contains(&nx) {
-                if board[ny as usize].as_bytes()[nx as usize] == b'*' {
-                    count += 1;
-                }
+            if (0..height as isize).contains(&ny)
+                && (0..width as isize).contains(&nx)
+                && board[ny as usize].as_bytes()[nx as usize] == b'*'
+            {
+                count += 1;
             }
         }
     }
